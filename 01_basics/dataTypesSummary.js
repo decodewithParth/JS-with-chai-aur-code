@@ -34,3 +34,27 @@ let myFunction=function(){
 // myFunction();
 
 
+
+// +++++++++++++++++ Memory types ++++++++++++++++++++++
+
+// Stack (used in Premitive data types) and Heap (used in Non-Premitive data types)
+
+let myCode="codingWar";
+
+let anotherCode=myCode;
+anotherCode="newCode";
+
+console.log(myCode);
+console.log(anotherCode)
+
+
+let objOne={
+    email:"one@gmail.com",
+    upi:"one@upi"
+}
+
+let objTwo=objOne;
+objTwo.email="another@gmail.com";
+
+console.log(objOne.email);
+console.log(objOne.email);
