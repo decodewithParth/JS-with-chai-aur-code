@@ -41,6 +41,6 @@ const chai = () => {
 
 // const addTwo=(num1,num2)=> (num1+num2);
 
-const addTwo=(num1,num2)=> ({username:"Hidan"});  // this will return object 
+const addTwo=(num1,num2)=> ({username:"Hidan"});  // this will return object , talking about the arrow function parenthesis
 
 console.log(addTwo(2,10));
