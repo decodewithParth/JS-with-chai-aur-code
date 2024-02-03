@@ -1,0 +1,16 @@
+query selector to use in DOM manipulation
+
+textContent
+innerHTML
+innerText
+
+querySelecor()  -> give first occurence of query | only give one value
+
+querySelecorAll() -> give all occurences of query
+
+getElementByClassName()
+getElementById()
+
+Array.from() -> method to convert the nodelist to Array
+
+
