@@ -35,35 +35,44 @@ buttons.forEach(function (button) {
 
 
 ```
-<!-- 
+ 
 ## project 2 solution
 
 ```javascript
+// this use case will give you empty
+// const height = document.querySelector('#height');
+// const weight = document.querySelector('#weight');
+// const button = document.querySelector('button');
+// console.log(button);
 const form = document.querySelector('form');
-// this usecase will give you empty
-// const height = parseInt(document.querySelector('#height').value)
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
-
   const height = parseInt(document.querySelector('#height').value);
   const weight = parseInt(document.querySelector('#weight').value);
-  const results = document.querySelector('#results');
-
+  const result = document.querySelector('#results');
   if (height === '' || height < 0 || isNaN(height)) {
-    results.innerHTML = `Please give a valid height ${height}`;
+    result.innerHTML = 'Please give a valid height!';
   } else if (weight === '' || weight < 0 || isNaN(weight)) {
-    results.innerHTML = `Please give a valid weight ${weight}`;
+    result.innerHTML = 'Please give a valid weight!';
   } else {
-    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
-    //show the result
-    results.innerHTML = `<span>${bmi}</span>`;
+    let bmi = (weight / ((height / 100) * (height / 100))).toFixed(2);
+    result.innerHTML = bmi;
+    if (bmi < 18.6) {
+      result.appendChild(document.createTextNode('You are under weight'));
+    } else if (bmi > 24.9) {
+      result.appendChild(document.createTextNode('You are over weight'));
+    } else {
+      result.appendChild(
+        document.createTextNode('You are parfer according to BMI')
+      );
+    }
   }
 });
 
-
 ```
-
+<!-- 
+<--
 ## project 3 solution code
 
 ```javascript
@@ -242,4 +251,5 @@ document.querySelector('#start').addEventListener('click', startChangingColor);
 document.querySelector('#stop').addEventListener('click', stopChangingColor);
 
 
-``` -->
+``` 
+--> -->
