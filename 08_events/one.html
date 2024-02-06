@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // we don't use the below code to add onlick event because we this will not give the propogation | not give more info about that what just happened
+    // document.getElementById('owl').onclick=function(){
+    //     alert("owl is clicked");
+    // }
+
+    // attachEvent() -> used before this when we have to run on internet explorer
+    // jQuery - has on method which will used as .on
+
+    // MOst used method - addEventListener
+    // event element to learn
+    // type , timestamp , defaultPrevented
+    // target , toElement , srcElement , currentTarget
+    // clientX , clientY , screenX , screenY
+    // altkey , ctrlkey , shiftkey , keyCode 
+
+    // this false is very interesting and asked in interviews many times so be aware about it 
+    // document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log("Inside the images ul clicked");
+
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function (e) {
+    //     console.log("Owl clicked");
+    //     e.stopPropagation();  // used to stop the event bubbling in event or propogation in events
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     console.log("CLicked the google link");
+    // },false)
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+        // console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        if (e.target.tagName == "IMG") {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+            // First method to delete the selected node
+            removeIt.remove();
+        }
+
+        // second method to delete or remove the clicked node
+        // removeIt.parentNode.removeChild(removeIt)
+    }, false)
+
+
+</script>
+
+</html>
