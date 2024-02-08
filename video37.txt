@@ -1,0 +1,16 @@
+Javascript : -
+        - Synchronous
+        - Single Threaded
+
+Execution Context : -
+        -> execute the one line of code at a time
+        
+        ----------------    
+        | Call - Stack |    
+        ----------------
+
+        ----------------
+        | Memory Heap  |    
+        ----------------
+
+        - above are main things to keep in mind
