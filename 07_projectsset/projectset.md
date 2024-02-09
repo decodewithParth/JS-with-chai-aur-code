@@ -175,3 +175,69 @@ function newGame() {
   });
 }
 ```
+
+## project 5 Solution Code 
+
+```javascript
+
+const insert = document.getElementById('insert');
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+  <div class="color"
+  <table>
+  <tr>
+    <th>Key</th>
+    <th>KeyCode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.Key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+</div>
+  `;
+});
+
+```
+
+## project 6 solution code
+
+```javascript
+// generating the random colours
+
+const randomColor = function () {
+  const values = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += values[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+let intervalId;
+
+const startChangingColor = function () {
+  // this if condition is written because of we are making intervalId to null , so we cannot directly assign value to the variable having the null value so we have to do safety check using if condition
+
+  if (!intervalId) {
+    intervalId = setInterval(changeColor, 1000);
+  }
+
+  function changeColor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+};
+
+const stopChangingColor = function () {
+  clearInterval(intervalId);
+  intervalId = null; // making it null because overriding the values is not proffessinal code so we have assign null value to the intervalId
+};
+
+document.querySelector('#start').addEventListener('click', startChangingColor);
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+```
