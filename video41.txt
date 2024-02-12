@@ -1,0 +1,5 @@
+Fetch in js 
+
+learned about the how the brower do the backed work on api calls
+
+how fetch internally work and if you get the 404 Error in fetch then where it stores the that info in reject or response ?
